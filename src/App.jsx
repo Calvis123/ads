@@ -364,95 +364,6 @@ export default function App() {
           </div>
         </section>
 
-        <section id="social-proof" className="bg-[#081120] px-4 py-24 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <Header
-                eyebrow="Real Departures"
-                title="Visible proof that plans become"
-                accent="real journeys."
-                text="Departure imagery builds trust by showing that students are not just applying, they are actually leaving for the next stage of their education."
-                light
-              />
-            </Reveal>
-            <Reveal className="mt-14 overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.25)] sm:p-4">
-              <div className="overflow-hidden rounded-[1.5rem]">
-                <div className="flex transition-transform duration-700 ease-out" style={sliderStyle}>
-                  {slides.map((slide) => (
-                    <figure key={slide.image} className="relative flex min-w-full items-center justify-center bg-[#0b1628] px-3 py-3 md:min-h-[38rem] md:px-4 md:py-4">
-                      <img
-                        src={slide.image}
-                        alt={slide.alt}
-                        className="max-h-[27rem] w-full rounded-[1.2rem] object-contain md:max-h-[36rem]"
-                        style={{ objectPosition: slide.position }}
-                      />
-                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#081120] via-[#081120]/72 to-transparent px-5 pb-5 pt-20 text-white sm:px-8 sm:pb-8 sm:pt-24">
-                        <p className="font-display text-xl font-black sm:text-3xl">{slide.title}</p>
-                        <p className="mt-2 max-w-2xl text-xs leading-6 text-slate-300 sm:mt-3 sm:text-sm sm:leading-8">{slide.text}</p>
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-5 flex flex-wrap items-center justify-between gap-4 px-2 pb-2">
-                <div className="flex items-center gap-2">
-                  {slides.map((slide, index) => (
-                    <button
-                      key={slide.image}
-                      type="button"
-                      onClick={() => jump(index)}
-                      aria-label={`Show slide ${index + 1}`}
-                      className={`h-2.5 rounded-full transition-all ${
-                        index === slideIndex ? "w-10 bg-cyan-300" : "w-2.5 bg-white/25"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <div className="flex gap-2 sm:gap-3">
-                  <button type="button" onClick={() => jump(slideIndex - 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
-                    Prev
-                  </button>
-                  <button type="button" onClick={() => jump(slideIndex + 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
-                    Next
-                  </button>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section id="testimonials" className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
-          <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-12 h-[28rem] w-[28rem] rounded-full bg-cyan-200/35 blur-3xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-10 h-[28rem] w-[28rem] rounded-full bg-amber-200/35 blur-3xl" />
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <Header
-                eyebrow="Student Stories"
-                title="Confidence built through"
-                accent="real outcomes."
-                text="Proof matters. These stories help families see the impact of guided planning and a more structured admissions process."
-              />
-            </Reveal>
-            <div className="mt-14 grid gap-5 lg:grid-cols-3">
-              {testimonials.map((t, index) => (
-                <Reveal key={t.name} delay={index * 60}>
-                  <article className="h-full rounded-[1.8rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] sm:p-8">
-                    <div className="text-6xl font-display leading-none text-cyan-200">"</div>
-                    <p className="mt-4 text-[0.98rem] italic leading-8 text-slate-700">{t.quote}</p>
-                    <div className="mt-8 flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-bold text-white">{t.initials}</div>
-                      <div>
-                        <div className="text-sm font-semibold text-slate-950">{t.name}</div>
-                        <div className="text-sm text-slate-500">{t.school}</div>
-                      </div>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="px-4 py-6 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.9rem] border border-slate-200 bg-white/80 shadow-[0_20px_50px_rgba(15,23,42,0.05)] backdrop-blur-xl">
             <div className="flex flex-wrap items-center gap-3 border-b border-slate-100 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
@@ -524,6 +435,38 @@ export default function App() {
                 We do more than recommend schools. We help students understand fit, strengthen their applications, navigate visa requirements, and prepare for the transition with fewer surprises.
               </p>
             </Reveal>
+
+            <div id="testimonials" className="relative mt-14 overflow-hidden rounded-[2rem] border border-slate-200 bg-white/70 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:p-10 lg:col-span-2">
+              <div aria-hidden="true" className="pointer-events-none absolute -left-28 top-10 h-[20rem] w-[20rem] rounded-full bg-cyan-200/40 blur-3xl" />
+              <div aria-hidden="true" className="pointer-events-none absolute -right-28 bottom-10 h-[20rem] w-[20rem] rounded-full bg-amber-200/35 blur-3xl" />
+              <div className="relative">
+                <Reveal>
+                  <Header
+                    eyebrow="Success Stories"
+                    title="Confidence built through"
+                    accent="real outcomes."
+                    text="Families love seeing proof. Here are a few student experiences that show the value of structured planning and guided admissions."
+                  />
+                </Reveal>
+                <div className="mt-12 grid gap-5 lg:grid-cols-3">
+                  {testimonials.map((t, index) => (
+                    <Reveal key={t.name} delay={index * 60}>
+                      <article className="h-full rounded-[1.8rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] sm:p-8">
+                        <div className="text-6xl font-display leading-none text-cyan-200">"</div>
+                        <p className="mt-4 text-[0.98rem] italic leading-8 text-slate-700">{t.quote}</p>
+                        <div className="mt-8 flex items-center gap-4">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-bold text-white">{t.initials}</div>
+                          <div>
+                            <div className="text-sm font-semibold text-slate-950">{t.name}</div>
+                            <div className="text-sm text-slate-500">{t.school}</div>
+                          </div>
+                        </div>
+                      </article>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -653,6 +596,63 @@ export default function App() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="social-proof" className="bg-[#081120] px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <Header
+                eyebrow="Real Departures"
+                title="Visible proof that plans become"
+                accent="real journeys."
+                text="Departure imagery builds trust by showing that students are not just applying, they are actually leaving for the next stage of their education."
+                light
+              />
+            </Reveal>
+            <Reveal className="mt-14 overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.25)] sm:p-4">
+              <div className="overflow-hidden rounded-[1.5rem]">
+                <div className="flex transition-transform duration-700 ease-out" style={sliderStyle}>
+                  {slides.map((slide) => (
+                    <figure key={slide.image} className="relative flex min-w-full items-center justify-center bg-[#0b1628] px-3 py-3 md:min-h-[38rem] md:px-4 md:py-4">
+                      <img
+                        src={slide.image}
+                        alt={slide.alt}
+                        className="max-h-[27rem] w-full rounded-[1.2rem] object-contain md:max-h-[36rem]"
+                        style={{ objectPosition: slide.position }}
+                      />
+                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#081120] via-[#081120]/72 to-transparent px-5 pb-5 pt-20 text-white sm:px-8 sm:pb-8 sm:pt-24">
+                        <p className="font-display text-xl font-black sm:text-3xl">{slide.title}</p>
+                        <p className="mt-2 max-w-2xl text-xs leading-6 text-slate-300 sm:mt-3 sm:text-sm sm:leading-8">{slide.text}</p>
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-4 px-2 pb-2">
+                <div className="flex items-center gap-2">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.image}
+                      type="button"
+                      onClick={() => jump(index)}
+                      aria-label={`Show slide ${index + 1}`}
+                      className={`h-2.5 rounded-full transition-all ${
+                        index === slideIndex ? "w-10 bg-cyan-300" : "w-2.5 bg-white/25"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className="flex gap-2 sm:gap-3">
+                  <button type="button" onClick={() => jump(slideIndex - 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
+                    Prev
+                  </button>
+                  <button type="button" onClick={() => jump(slideIndex + 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
+                    Next
+                  </button>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
 
