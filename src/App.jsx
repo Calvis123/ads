@@ -100,6 +100,7 @@ export default function App() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [leadForm, setLeadForm] = useState({
     fullName: "",
+    age: "",
     location: "",
     phoneNumber: "",
     countryInterest: "",
@@ -171,6 +172,7 @@ export default function App() {
     const message = [
       "New Lead Enquiry - Barak Pathways",
       `Name: ${leadForm.fullName}`,
+      `Age: ${leadForm.age}`,
       `Location: ${leadForm.location}`,
       `Phone Number: ${leadForm.phoneNumber}`,
       `Country of Interest: ${leadForm.countryInterest}`,
@@ -721,6 +723,19 @@ export default function App() {
                       onChange={updateLeadForm("fullName")}
                     />
                   </div>
+                </div>
+                <div className="mt-4">
+                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Age</label>
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    min="10"
+                    max="80"
+                    placeholder="18"
+                    className={field}
+                    value={leadForm.age}
+                    onChange={updateLeadForm("age")}
+                  />
                 </div>
                 <div className="mt-4">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Location</label>
