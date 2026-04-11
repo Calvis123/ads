@@ -6,8 +6,8 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "500+", label: "Students Placed" },
-  { value: "30+", label: "Countries" },
+  { value: "50+", label: "Students Placed" },
+  { value: "15+", label: "Countries" },
   { value: "95%", label: "Success Rate" },
 ];
 
