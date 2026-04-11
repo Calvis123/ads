@@ -201,8 +201,13 @@ export default function App() {
               : "border-white/60 bg-white/70 backdrop-blur-md"
           }`}
         >
-          <a href="#top" className="font-display text-[1.25rem] font-black text-slate-950 sm:text-2xl">
-            Barak <span className="text-cyan-700">Pathways</span>
+          <a href="#top" className="flex items-center gap-3">
+            <img
+              src="/brand-logo.png"
+              alt="Barak Pathways"
+              className="h-8 w-auto sm:h-9"
+            />
+            <span className="sr-only">Barak Pathways</span>
           </a>
           <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
@@ -242,8 +247,12 @@ export default function App() {
           />
           <div className="absolute right-3 top-3 w-[min(22rem,calc(100%-1.5rem))] overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-[0_28px_90px_rgba(15,23,42,0.18)]">
             <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-              <div className="font-display text-xl font-black text-slate-950">
-                Barak <span className="text-cyan-700">Pathways</span>
+              <div className="flex items-center gap-3">
+                <img
+                  src="/brand-logo.png"
+                  alt="Barak Pathways"
+                  className="h-8 w-auto"
+                />
               </div>
               <button
                 type="button"
@@ -795,8 +804,12 @@ export default function App() {
       <footer className="border-t border-slate-200/80 bg-white/80 px-4 pb-10 pt-12 backdrop-blur-xl sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 xl:grid-cols-[1.8fr_1fr_1fr_1.2fr]">
           <div>
-            <div className="font-display text-[1.8rem] font-black text-slate-950">
-              Barak <span className="text-cyan-700">Pathways</span>
+            <div className="flex items-center gap-3">
+              <img
+                src="/brand-logo.png"
+                alt="Barak Pathways"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="mt-4 max-w-md text-sm leading-8 text-slate-600">
               A study abroad consultancy based in Eldoret, Kenya, helping students access international education opportunities with a more structured and supportive process.
