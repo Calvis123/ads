@@ -435,38 +435,6 @@ export default function App() {
                 We do more than recommend schools. We help students understand fit, strengthen their applications, navigate visa requirements, and prepare for the transition with fewer surprises.
               </p>
             </Reveal>
-
-            <div id="testimonials" className="relative mt-14 overflow-hidden rounded-[2rem] border border-slate-200 bg-white/70 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:p-10 lg:col-span-2">
-              <div aria-hidden="true" className="pointer-events-none absolute -left-28 top-10 h-[20rem] w-[20rem] rounded-full bg-cyan-200/40 blur-3xl" />
-              <div aria-hidden="true" className="pointer-events-none absolute -right-28 bottom-10 h-[20rem] w-[20rem] rounded-full bg-amber-200/35 blur-3xl" />
-              <div className="relative">
-                <Reveal>
-                  <Header
-                    eyebrow="Success Stories"
-                    title="Confidence built through"
-                    accent="real outcomes."
-                    text="Families love seeing proof. Here are a few student experiences that show the value of structured planning and guided admissions."
-                  />
-                </Reveal>
-                <div className="mt-12 grid gap-5 lg:grid-cols-3">
-                  {testimonials.map((t, index) => (
-                    <Reveal key={t.name} delay={index * 60}>
-                      <article className="h-full rounded-[1.8rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] sm:p-8">
-                        <div className="text-6xl font-display leading-none text-cyan-200">"</div>
-                        <p className="mt-4 text-[0.98rem] italic leading-8 text-slate-700">{t.quote}</p>
-                        <div className="mt-8 flex items-center gap-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-bold text-white">{t.initials}</div>
-                          <div>
-                            <div className="text-sm font-semibold text-slate-950">{t.name}</div>
-                            <div className="text-sm text-slate-500">{t.school}</div>
-                          </div>
-                        </div>
-                      </article>
-                    </Reveal>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -678,6 +646,38 @@ export default function App() {
                     </div>
                     <h3 className="mt-8 font-display text-2xl font-black text-slate-950">{service.title}</h3>
                     <p className="mt-4 text-sm leading-8 text-slate-600">{service.text}</p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="testimonials" className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
+          <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-10 h-[28rem] w-[28rem] rounded-full bg-cyan-200/35 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-40 bottom-12 h-[28rem] w-[28rem] rounded-full bg-amber-200/35 blur-3xl" />
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <Header
+                eyebrow="Success Stories"
+                title="Confidence built through"
+                accent="real outcomes."
+                text="Families love seeing proof. Here are a few student experiences that show the value of structured planning and guided admissions."
+              />
+            </Reveal>
+            <div className="mt-14 grid gap-5 lg:grid-cols-3">
+              {testimonials.map((t, index) => (
+                <Reveal key={t.name} delay={index * 60}>
+                  <article className="h-full rounded-[1.8rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] sm:p-8">
+                    <div className="text-6xl font-display leading-none text-cyan-200">"</div>
+                    <p className="mt-4 text-[0.98rem] italic leading-8 text-slate-700">{t.quote}</p>
+                    <div className="mt-8 flex items-center gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-bold text-white">{t.initials}</div>
+                      <div>
+                        <div className="text-sm font-semibold text-slate-950">{t.name}</div>
+                        <div className="text-sm text-slate-500">{t.school}</div>
+                      </div>
+                    </div>
                   </article>
                 </Reveal>
               ))}
