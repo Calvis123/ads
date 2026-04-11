@@ -12,6 +12,11 @@
 
   body {
     @apply bg-cream text-ink;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.12), transparent 38%),
+      radial-gradient(circle at 86% 18%, rgba(245, 158, 11, 0.10), transparent 40%),
+      radial-gradient(circle at 68% 92%, rgba(15, 23, 42, 0.06), transparent 44%);
+    background-attachment: fixed;
   }
 
   a {
@@ -21,6 +26,34 @@
   :focus-visible {
     outline: 2px solid rgba(34, 211, 238, 0.85);
     outline-offset: 3px;
+  }
+}
+
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float-soft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -46,6 +79,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .marquee-track {
     animation: none !important;
     transform: none !important;

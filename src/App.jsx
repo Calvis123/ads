@@ -305,6 +305,7 @@ export default function App() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(8,17,32,0.92)_0%,rgba(16,35,60,0.66)_48%,rgba(15,60,79,0.62)_100%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.25),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(245,158,11,0.22),transparent_26%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(34,211,238,0.14),rgba(245,158,11,0.10),rgba(34,211,238,0.14))] bg-[length:200%_100%] opacity-70 motion-safe:animate-[gradient-pan_18s_ease-in-out_infinite]" />
               </div>
               <div className="relative z-10">
                 <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.28em] text-cyan-200">
@@ -725,6 +726,47 @@ export default function App() {
                   </article>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="process" className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
+          <div aria-hidden="true" className="pointer-events-none absolute -left-48 top-24 h-[34rem] w-[34rem] rounded-full bg-cyan-200/25 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-48 bottom-10 h-[34rem] w-[34rem] rounded-full bg-amber-200/25 blur-3xl" />
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <Header
+                eyebrow="How It Works"
+                title="A clear path from"
+                accent="inquiry to takeoff."
+                text="We run your journey as a simple, structured pipeline so you always know what happens next and what to prepare."
+              />
+            </Reveal>
+
+            <div className="relative mt-14">
+              <div
+                aria-hidden="true"
+                className="hidden lg:block absolute left-10 right-10 top-[2.1rem] h-px bg-[linear-gradient(90deg,rgba(34,211,238,0.0),rgba(34,211,238,0.55),rgba(245,158,11,0.55),rgba(34,211,238,0.55),rgba(34,211,238,0.0))] bg-[length:200%_100%] motion-safe:animate-[gradient-pan_16s_ease-in-out_infinite]"
+              />
+              <div className="grid gap-5 lg:grid-cols-4">
+                {steps.map((step, index) => (
+                  <Reveal key={step.number} delay={index * 60}>
+                    <article className="group relative h-full rounded-[1.9rem] border border-slate-200 bg-white/85 p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:border-cyan-200">
+                      <div className="flex items-center justify-between">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-display text-lg font-black text-white ring-1 ring-white/40">
+                          {step.number}
+                        </div>
+                        <span className="rounded-full bg-slate-950/5 px-3 py-2 text-[0.62rem] font-bold uppercase tracking-[0.22em] text-slate-600">
+                          Step {step.number}
+                        </span>
+                      </div>
+                      <h3 className="mt-7 font-display text-2xl font-black text-slate-950">{step.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{step.text}</p>
+                      <div aria-hidden="true" className="pointer-events-none absolute -bottom-14 -right-14 h-32 w-32 rounded-full bg-cyan-200/0 blur-2xl transition group-hover:bg-cyan-200/30 motion-safe:animate-[float-soft_10s_ease-in-out_infinite]" />
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
         </section>
