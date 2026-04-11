@@ -296,7 +296,16 @@ export default function App() {
         <section className="px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <Reveal className="relative overflow-hidden rounded-[2rem] bg-[#081120] px-5 pb-8 pt-8 text-white shadow-[0_30px_90px_rgba(8,17,32,0.18)] sm:px-8 sm:pb-10 sm:pt-10 lg:px-12">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.22),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(245,158,11,0.2),transparent_24%),linear-gradient(135deg,#081120_0%,#10233c_48%,#0f3c4f_100%)]" />
+              <div className="absolute inset-0">
+                <img
+                  src="/hero/hero.jpg"
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(8,17,32,0.92)_0%,rgba(16,35,60,0.66)_48%,rgba(15,60,79,0.62)_100%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.25),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(245,158,11,0.22),transparent_26%)]" />
+              </div>
               <div className="relative z-10">
                 <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.28em] text-cyan-200">
                   <span className="h-2 w-2 rounded-full bg-cyan-300" />
