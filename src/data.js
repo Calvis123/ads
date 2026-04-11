@@ -38,6 +38,11 @@ export const destinations = [
     image: "/destinations/australia.jpg",
     blurb: "Well-known for lifestyle, respected universities, and attractive postgraduate pathways.",
     highlights: ["Premium lifestyle", "Global reputation"],
+    costs: {
+      tuition: ["Undergrad: $15k - $35k / year", "Postgrad: $20k - $45k / year"],
+      living: "$1,200 - $2,200 / month",
+      notes: ["Work: 48 hrs/fortnight", "Strong demand in IT, healthcare, trades", "PR pathways available"],
+    },
   },
   {
     name: "United States",
@@ -46,6 +51,11 @@ export const destinations = [
     image: "/destinations/usa-harvard.jpg",
     blurb: "For ambitious students targeting global brand-name universities, research pathways, and broad scholarship opportunities.",
     highlights: ["STEM + Business", "Top-ranked campuses"],
+    costs: {
+      tuition: ["$20k - $60k+ / year"],
+      living: "$1,500 - $3,000 / month",
+      notes: ["Top-ranked universities", "Limited work options during study", "High cost, strong long-term ROI"],
+    },
   },
   {
     name: "United Kingdom",
@@ -54,6 +64,11 @@ export const destinations = [
     image: "/destinations/uk.jpg",
     blurb: "Strong one-year master's routes, historic universities, and globally respected qualifications.",
     highlights: ["1-year masters", "Historic institutions"],
+    costs: {
+      tuition: ["$15k - $35k / year"],
+      living: "$1,200 - $2,500 / month",
+      notes: ["1-year master's programs", "Graduate visa (2 years)", "London has higher living costs"],
+    },
   },
   {
     name: "Canada",
@@ -62,6 +77,11 @@ export const destinations = [
     image: "/destinations/canada.jpg",
     blurb: "A balanced option for quality education, student support, and a welcoming international environment.",
     highlights: ["Student-friendly", "Strong support systems"],
+    costs: {
+      tuition: ["$15k - $35k / year"],
+      living: "$1,200 - $2,000 / month",
+      notes: ["Work: 20 hrs/week", "PR pathways after study", "High quality education"],
+    },
   },
   {
     name: "New Zealand",
@@ -71,6 +91,11 @@ export const destinations = [
     image: "/destinations/newzealand.jpg",
     blurb: "A calm, high-quality study destination with strong student experience and modern city life.",
     highlights: ["Safe cities", "Practical education"],
+    costs: {
+      tuition: ["$15k - $30k / year"],
+      living: "$1,200 - $2,000 / month",
+      notes: ["Work: 20 hrs/week", "Safe, peaceful environment", "PR options available"],
+    },
   },
   {
     name: "Cyprus",
@@ -79,6 +104,11 @@ export const destinations = [
     image: "/destinations/cyprus.jpg",
     blurb: "Ideal for students looking for accessible tuition, sunshine, and a fast-growing international student scene.",
     highlights: ["Affordable tuition", "Mediterranean living"],
+    costs: {
+      tuition: ["$3.5k - $10k / year"],
+      living: "$700 - $1,200 / month",
+      notes: ["Very affordable routes", "English widely used", "Limited job market"],
+    },
   },
   {
     name: "Spain",
@@ -87,6 +117,11 @@ export const destinations = [
     image: "/destinations/spain.jpg",
     blurb: "A strong choice for culture, business, tourism, and programs with a vibrant European experience.",
     highlights: ["European access", "Vibrant culture"],
+    costs: {
+      tuition: ["Public: $1k - $4k / year", "Private: $6k - $20k / year"],
+      living: "$800 - $1,500 / month",
+      notes: ["Affordable EU education", "Spanish often required", "Limited jobs for non-EU students"],
+    },
   },
   {
     name: "Malta",
@@ -95,6 +130,11 @@ export const destinations = [
     image: "/destinations/malta.jpg",
     blurb: "A smaller but attractive option for students seeking a warm climate, English usage, and accessible pathways.",
     highlights: ["English-friendly", "Smaller cohorts"],
+    costs: {
+      tuition: ["$7k - $15k / year"],
+      living: "$900 - $1,500 / month",
+      notes: ["English-speaking", "Small country (limited jobs)", "Popular for business & tourism"],
+    },
   },
 ];
 

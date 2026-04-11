@@ -515,6 +515,39 @@ export default function App() {
                         {destinations[0].blurb}
                       </p>
                     </div>
+
+                    {destinations[0].costs ? (
+                      <div className="mt-7 rounded-[1.4rem] border border-slate-200 bg-slate-50 p-5">
+                        <div className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-slate-500">
+                          Cost snapshot (USD estimates)
+                        </div>
+                        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                          <div className="rounded-[1.1rem] bg-white p-4">
+                            <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Tuition</div>
+                            <div className="mt-2 space-y-1 text-sm font-semibold text-slate-900">
+                              {destinations[0].costs.tuition.map((line) => (
+                                <div key={line}>{line}</div>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="rounded-[1.1rem] bg-white p-4">
+                            <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Living</div>
+                            <div className="mt-2 text-sm font-semibold text-slate-900">{destinations[0].costs.living}</div>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {destinations[0].costs.notes.slice(0, 3).map((item) => (
+                            <span
+                              key={item}
+                              className="rounded-full border border-slate-200 bg-white px-3 py-2 text-[0.64rem] font-bold uppercase tracking-[0.18em] text-slate-700"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+
                     <div className="mt-6 flex flex-wrap gap-2">
                       {destinations[0].highlights.map((item) => (
                         <span
@@ -558,6 +591,36 @@ export default function App() {
                         ) : null}
                       </div>
                       <p className="mt-4 text-sm leading-6 text-slate-600">{d.blurb}</p>
+
+                      {d.costs ? (
+                        <div className="mt-5 rounded-[1.2rem] border border-slate-200 bg-slate-50 p-4">
+                          <div className="grid gap-3 sm:grid-cols-2">
+                            <div>
+                              <div className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-slate-500">Tuition</div>
+                              <div className="mt-2 space-y-1 text-xs font-semibold text-slate-900">
+                                {d.costs.tuition.slice(0, 2).map((line) => (
+                                  <div key={line}>{line}</div>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <div className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-slate-500">Living</div>
+                              <div className="mt-2 text-xs font-semibold text-slate-900">{d.costs.living}</div>
+                            </div>
+                          </div>
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {d.costs.notes.slice(0, 2).map((item) => (
+                              <span
+                                key={item}
+                                className="rounded-full border border-slate-200 bg-white px-3 py-2 text-[0.6rem] font-bold uppercase tracking-[0.18em] text-slate-700"
+                              >
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+
                       <div className="mt-4 flex flex-wrap gap-2">
                         {d.highlights.map((item) => (
                           <span
@@ -573,6 +636,10 @@ export default function App() {
                 </Reveal>
               ))}
             </div>
+
+            <p className="mt-6 max-w-3xl text-xs leading-6 text-slate-500">
+              Tuition and living costs are estimates in USD and may vary by university, program, city, exchange rates, and student lifestyle.
+            </p>
           </div>
         </section>
 
