@@ -300,13 +300,13 @@ export default function App() {
               <div className="relative z-10">
                 <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.28em] text-cyan-200">
                   <span className="h-2 w-2 rounded-full bg-cyan-300" />
-                  Eldoret, Kenya | Global admissions advisory
+                  Global admissions advisory
                 </div>
                 <h1 className="max-w-4xl font-display text-[clamp(2.2rem,8vw,6.5rem)] font-black leading-[0.94]">
                   From local ambition to <span className="text-amber-300">international admission</span>.
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-                  Barak Pathways helps Kenyan students plan, apply, secure offers, and prepare for life abroad with the confidence of a guided process.
+                  Barak Pathways helps students plan, apply, secure offers, and prepare for life abroad with the confidence of a guided process.
                 </p>
                 <div className="mt-10 flex flex-wrap gap-4">
                   <a href="#contact" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-100 sm:px-7 sm:py-4">
@@ -429,7 +429,7 @@ export default function App() {
                 eyebrow="About Barak Pathways"
                 title="A consultancy built for"
                 accent="clarity and momentum."
-                text="Barak Pathways was founded in Eldoret to help students make strong international education decisions with expert guidance, better planning, and end-to-end support."
+                text="Barak Pathways supports students and families to make strong international education decisions with expert guidance, better planning, and end-to-end support."
               />
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600">
                 We do more than recommend schools. We help students understand fit, strengthen their applications, navigate visa requirements, and prepare for the transition with fewer surprises.
@@ -695,7 +695,7 @@ export default function App() {
                 />
                 <div className="mt-8 space-y-4 text-sm text-slate-600">
                   {[
-                    ["Office", "Kipchoge Avenue, Eldoret, Kenya"],
+                    ["Support", "Online support + in-person by appointment"],
                     ["Phone / WhatsApp", "+254 700 000 000"],
                     ["Email", "info@barakpathways.co.ke"],
                     ["Working Hours", "Mon - Fri: 8am - 6pm | Sat: 9am - 2pm"],
@@ -741,7 +741,7 @@ export default function App() {
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Location</label>
                   <input
                     type="text"
-                    placeholder="Eldoret, Kenya"
+                    placeholder="City, Country"
                     className={field}
                     value={leadForm.location}
                     onChange={updateLeadForm("location")}
@@ -827,7 +827,7 @@ export default function App() {
               />
             </div>
             <p className="mt-4 max-w-md text-sm leading-8 text-slate-600">
-              A study abroad consultancy based in Eldoret, Kenya, helping students access international education opportunities with a more structured and supportive process.
+              A study abroad consultancy helping families access international education opportunities with a more structured and supportive process.
             </p>
           </div>
           <div>
@@ -853,14 +853,14 @@ export default function App() {
           <div>
             <h5 className="text-xs font-bold uppercase tracking-[0.24em] text-slate-400">Contact</h5>
             <div className="mt-5 space-y-3 text-sm text-slate-600">
-              <p>Kipchoge Avenue, Eldoret</p>
+              <p>Online support + in-person by appointment</p>
               <p>+254 700 000 000</p>
               <p>info@barakpathways.co.ke</p>
             </div>
           </div>
         </div>
         <div className="mx-auto mt-10 flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6 text-xs text-slate-500">
-          <span>&copy; 2025 Barak Pathways. All rights reserved. | Eldoret, Kenya</span>
+          <span>&copy; 2025 Barak Pathways. All rights reserved.</span>
           <div className="flex gap-3">
             {socialLinks.map((item) => (
               <a
