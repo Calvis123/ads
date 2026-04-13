@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Reveal from "./components/Reveal";
 import {
-  aboutPoints,
   destinations,
   footerLinks,
   navLinks,
@@ -295,7 +294,7 @@ export default function App() {
       <main id="top">
         <section className="px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10">
-            <Reveal className="relative overflow-hidden rounded-[2rem] bg-[#081120] px-5 pb-8 pt-8 text-white shadow-[0_30px_90px_rgba(8,17,32,0.18)] sm:px-8 sm:pb-10 sm:pt-10 lg:px-12">
+            <Reveal className="relative overflow-hidden rounded-[2rem] bg-[#081120] px-5 pb-8 pt-8 text-white shadow-[0_30px_90px_rgba(8,17,32,0.18)] sm:px-8 sm:pb-10 sm:pt-10 lg:px-12 lg:min-h-[34rem]">
               <div className="absolute inset-0">
                 <img
                   src="/hero/hero.jpg"
@@ -306,6 +305,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(8,17,32,0.92)_0%,rgba(16,35,60,0.66)_48%,rgba(15,60,79,0.62)_100%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.25),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(245,158,11,0.22),transparent_26%)]" />
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(34,211,238,0.14),rgba(245,158,11,0.10),rgba(34,211,238,0.14))] bg-[length:200%_100%] opacity-70 motion-safe:animate-[gradient-pan_18s_ease-in-out_infinite]" />
+                <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,17,32,0.55),transparent_45%)]" />
               </div>
               <div className="relative z-10">
                 <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.28em] text-cyan-200">
@@ -798,80 +798,104 @@ export default function App() {
               <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-[0_28px_90px_rgba(15,23,42,0.16)] sm:p-10">
                 <div className="text-[0.72rem] font-bold uppercase tracking-[0.3em] text-cyan-300">Free consultation form</div>
                 <div className="mt-3 font-display text-3xl font-black sm:text-4xl">Tell us where you want to go.</div>
-                <div className="mt-8 grid gap-4 md:grid-cols-2">
-                  <div className="md:col-span-2">
-                    <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Full Name</label>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className={field}
-                      value={leadForm.fullName}
-                      onChange={updateLeadForm("fullName")}
-                    />
+                <form
+                  className="mt-8"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    submit();
+                  }}
+                >
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="md:col-span-2">
+                      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400" htmlFor="leadFullName">Full Name</label>
+                      <input
+                        id="leadFullName"
+                        name="fullName"
+                        type="text"
+                        autoComplete="name"
+                        placeholder="John Doe"
+                        className={field}
+                        value={leadForm.fullName}
+                        onChange={updateLeadForm("fullName")}
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400" htmlFor="leadAge">Age</label>
+                      <input
+                        id="leadAge"
+                        name="age"
+                        type="number"
+                        inputMode="numeric"
+                        min="10"
+                        max="80"
+                        placeholder="18"
+                        className={field}
+                        value={leadForm.age}
+                        onChange={updateLeadForm("age")}
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400" htmlFor="leadLocation">Location</label>
+                      <input
+                        id="leadLocation"
+                        name="location"
+                        type="text"
+                        autoComplete="address-level2"
+                        placeholder="City, Country"
+                        className={field}
+                        value={leadForm.location}
+                        onChange={updateLeadForm("location")}
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400" htmlFor="leadPhone">Phone Number</label>
+                      <input
+                        id="leadPhone"
+                        name="phone"
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        placeholder="+254 7XX XXX XXX"
+                        className={field}
+                        value={leadForm.phoneNumber}
+                        onChange={updateLeadForm("phoneNumber")}
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400" htmlFor="leadCountryInterest">Country of Interest</label>
+                      <select
+                        id="leadCountryInterest"
+                        name="countryInterest"
+                        className={field}
+                        value={leadForm.countryInterest}
+                        onChange={updateLeadForm("countryInterest")}
+                      >
+                        <option className="text-slate-950" value="">Select a country...</option>
+                        {["Australia", "United States", "United Kingdom", "Canada", "Cyprus", "Spain", "Malta", "New Zealand", "Other"].map((item) => (
+                          <option key={item} className="text-slate-950">{item}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400" htmlFor="leadLevelInterest">Level of Study</label>
+                      <select
+                        id="leadLevelInterest"
+                        name="levelInterest"
+                        className={field}
+                        value={leadForm.levelInterest}
+                        onChange={updateLeadForm("levelInterest")}
+                      >
+                        <option className="text-slate-950" value="">Select level...</option>
+                        {["Certificate", "Diploma", "Undergraduate", "Postgraduate", "Masters", "PhD", "Not Sure Yet"].map((item) => (
+                          <option key={item} className="text-slate-950">{item}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div className="mt-4">
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Age</label>
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    min="10"
-                    max="80"
-                    placeholder="18"
-                    className={field}
-                    value={leadForm.age}
-                    onChange={updateLeadForm("age")}
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Location</label>
-                  <input
-                    type="text"
-                    placeholder="City, Country"
-                    className={field}
-                    value={leadForm.location}
-                    onChange={updateLeadForm("location")}
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Phone Number</label>
-                  <input
-                    type="tel"
-                    placeholder="+254 7XX XXX XXX"
-                    className={field}
-                    value={leadForm.phoneNumber}
-                    onChange={updateLeadForm("phoneNumber")}
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Country of Interest</label>
-                  <select
-                    className={field}
-                    value={leadForm.countryInterest}
-                    onChange={updateLeadForm("countryInterest")}
-                  >
-                    <option className="text-slate-950" value="">Select a country...</option>
-                    {["Australia", "United States", "United Kingdom", "Canada", "Cyprus", "Spain", "Malta", "New Zealand", "Other"].map((item) => (
-                      <option key={item} className="text-slate-950">{item}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="mt-4">
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Level of Study Interested In</label>
-                  <select
-                    className={field}
-                    value={leadForm.levelInterest}
-                    onChange={updateLeadForm("levelInterest")}
-                  >
-                    <option className="text-slate-950" value="">Select level of study...</option>
-                    {["Certificate", "Diploma", "Undergraduate", "Postgraduate", "Masters", "PhD", "Not Sure Yet"].map((item) => (
-                      <option key={item} className="text-slate-950">{item}</option>
-                    ))}
-                  </select>
-                </div>
-                <button type="button" onClick={submit} className="mt-6 w-full rounded-full bg-cyan-300 px-6 py-4 text-sm font-bold text-slate-950 hover:bg-cyan-200">
-                  Submit Enquiry
-                </button>
+                  <button type="submit" className="mt-6 w-full rounded-full bg-cyan-300 px-6 py-4 text-sm font-bold text-slate-950 hover:bg-cyan-200">
+                    Submit Enquiry
+                  </button>
+                </form>
               </div>
             </Reveal>
           </div>
