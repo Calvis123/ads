@@ -383,22 +383,14 @@ export default function App() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <Reveal>
               <div className="overflow-hidden rounded-[2rem] bg-[#0f172a] p-8 text-white shadow-[0_35px_100px_rgba(15,23,42,0.16)] sm:p-10">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="rounded-[1.5rem] bg-white/5 p-6">
-                    <div className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-cyan-300">Positioning</div>
-                    <div className="mt-3 font-display text-4xl font-black">7+</div>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">Years helping students move from uncertainty to a clear study-abroad pathway.</p>
-                  </div>
-                  <div className="rounded-[1.5rem] bg-cyan-400/10 p-6">
-                    <div className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-cyan-300">Advisory style</div>
-                    <div className="mt-3 text-lg font-semibold">High-touch, practical, transparent</div>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">We simplify decisions, documents, timelines, and expectations for both students and families.</p>
-                  </div>
-                  <div className="sm:col-span-2 rounded-[1.5rem] bg-[linear-gradient(135deg,rgba(34,211,238,0.18),rgba(245,158,11,0.12))] p-7">
-                    <p className="font-display text-3xl font-black leading-tight">
-                      Trusted guidance for ambitious students who want global opportunities without guesswork.
-                    </p>
-                  </div>
+                <div className="max-w-xl">
+                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-cyan-300">Barak Pathways</div>
+                  <p className="mt-4 font-display text-3xl font-black leading-tight">
+                    Trusted guidance for ambitious students seeking global opportunities.
+                  </p>
+                  <p className="mt-5 text-sm leading-8 text-slate-300">
+                    We simplify choices, timelines, and documentation so students and families can move forward with confidence and clarity.
+                  </p>
                 </div>
               </div>
             </Reveal>
