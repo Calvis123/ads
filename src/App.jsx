@@ -379,6 +379,63 @@ export default function App() {
           </div>
         </section>
 
+        <section id="social-proof" className="bg-[#081120] px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <Header
+                eyebrow="Real Departures"
+                title="Visible proof that plans become"
+                accent="real journeys."
+                text="Departure imagery builds trust by showing that students are not just applying, they are actually leaving for the next stage of their education."
+                light
+              />
+            </Reveal>
+            <Reveal className="mt-14 overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.25)] sm:p-4">
+              <div className="overflow-hidden rounded-[1.5rem]">
+                <div className="flex transition-transform duration-700 ease-out" style={sliderStyle}>
+                  {slides.map((slide) => (
+                    <figure key={slide.image} className="relative flex min-w-full items-center justify-center bg-[#0b1628] px-3 py-3 md:min-h-[38rem] md:px-4 md:py-4">
+                      <img
+                        src={slide.image}
+                        alt={slide.alt}
+                        className="max-h-[27rem] w-full rounded-[1.2rem] object-contain md:max-h-[36rem]"
+                        style={{ objectPosition: slide.position }}
+                      />
+                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#081120] via-[#081120]/72 to-transparent px-5 pb-5 pt-20 text-white sm:px-8 sm:pb-8 sm:pt-24">
+                        <p className="font-display text-xl font-black sm:text-3xl">{slide.title}</p>
+                        <p className="mt-2 max-w-2xl text-xs leading-6 text-slate-300 sm:mt-3 sm:text-sm sm:leading-8">{slide.text}</p>
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-4 px-2 pb-2">
+                <div className="flex items-center gap-2">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.image}
+                      type="button"
+                      onClick={() => jump(index)}
+                      aria-label={`Show slide ${index + 1}`}
+                      className={`h-2.5 rounded-full transition-all ${
+                        index === slideIndex ? "w-10 bg-cyan-300" : "w-2.5 bg-white/25"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className="flex gap-2 sm:gap-3">
+                  <button type="button" onClick={() => jump(slideIndex - 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
+                    Prev
+                  </button>
+                  <button type="button" onClick={() => jump(slideIndex + 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
+                    Next
+                  </button>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         <section id="about" className="px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <Reveal>
@@ -601,63 +658,6 @@ export default function App() {
             <p className="mt-6 max-w-3xl text-xs leading-6 text-slate-500">
               Tuition and living costs are estimates in USD and may vary by university, program, city, exchange rates, and student lifestyle.
             </p>
-          </div>
-        </section>
-
-        <section id="social-proof" className="bg-[#081120] px-4 py-24 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <Header
-                eyebrow="Real Departures"
-                title="Visible proof that plans become"
-                accent="real journeys."
-                text="Departure imagery builds trust by showing that students are not just applying, they are actually leaving for the next stage of their education."
-                light
-              />
-            </Reveal>
-            <Reveal className="mt-14 overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.25)] sm:p-4">
-              <div className="overflow-hidden rounded-[1.5rem]">
-                <div className="flex transition-transform duration-700 ease-out" style={sliderStyle}>
-                  {slides.map((slide) => (
-                    <figure key={slide.image} className="relative flex min-w-full items-center justify-center bg-[#0b1628] px-3 py-3 md:min-h-[38rem] md:px-4 md:py-4">
-                      <img
-                        src={slide.image}
-                        alt={slide.alt}
-                        className="max-h-[27rem] w-full rounded-[1.2rem] object-contain md:max-h-[36rem]"
-                        style={{ objectPosition: slide.position }}
-                      />
-                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#081120] via-[#081120]/72 to-transparent px-5 pb-5 pt-20 text-white sm:px-8 sm:pb-8 sm:pt-24">
-                        <p className="font-display text-xl font-black sm:text-3xl">{slide.title}</p>
-                        <p className="mt-2 max-w-2xl text-xs leading-6 text-slate-300 sm:mt-3 sm:text-sm sm:leading-8">{slide.text}</p>
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-5 flex flex-wrap items-center justify-between gap-4 px-2 pb-2">
-                <div className="flex items-center gap-2">
-                  {slides.map((slide, index) => (
-                    <button
-                      key={slide.image}
-                      type="button"
-                      onClick={() => jump(index)}
-                      aria-label={`Show slide ${index + 1}`}
-                      className={`h-2.5 rounded-full transition-all ${
-                        index === slideIndex ? "w-10 bg-cyan-300" : "w-2.5 bg-white/25"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <div className="flex gap-2 sm:gap-3">
-                  <button type="button" onClick={() => jump(slideIndex - 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
-                    Prev
-                  </button>
-                  <button type="button" onClick={() => jump(slideIndex + 1)} className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:border-cyan-300 hover:text-cyan-200">
-                    Next
-                  </button>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
