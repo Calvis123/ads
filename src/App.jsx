@@ -340,23 +340,13 @@ export default function App() {
               </div>
             </Reveal>
 
-            <Reveal delay={140} className="grid gap-6">
-              <div className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_25px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl">
-                <div className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-cyan-700">Why families trust us</div>
-                <div className="mt-5 space-y-5">
-                  {aboutPoints.map((point) => (
-                    <div key={point.title} className="rounded-[1.25rem] border border-slate-100 bg-slate-50/70 p-4">
-                      <div className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-amber-600">{point.tag}</div>
-                      <div className="mt-2 text-lg font-semibold text-slate-950">{point.title}</div>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">{point.text}</p>
-                    </div>
-                  ))}
+            <Reveal delay={140} className="self-stretch">
+              <div className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-[#dff2fb] p-7 shadow-[0_25px_70px_rgba(15,23,42,0.08)] sm:p-8">
+                <div>
+                  <div className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-cyan-800">Student route map</div>
+                  <div className="mt-3 text-3xl font-display font-black text-slate-950">Structured guidance from inquiry to takeoff.</div>
                 </div>
-              </div>
-              <div className="overflow-hidden rounded-[2rem] bg-[#dff2fb] p-7 shadow-[0_25px_70px_rgba(15,23,42,0.08)]">
-                <div className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-cyan-800">Student route map</div>
-                <div className="mt-3 text-3xl font-display font-black text-slate-950">Structured guidance from inquiry to takeoff.</div>
-                <div className="mt-8 space-y-4">
+                <div className="mt-8 grid flex-1 content-start gap-4">
                   {steps.map((step) => (
                     <div key={step.number} className="grid grid-cols-[auto_1fr] gap-4 rounded-[1.25rem] bg-white/80 p-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-display text-lg font-black text-white">
