@@ -294,7 +294,7 @@ export default function App() {
 
       <main id="top">
         <section className="px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="mx-auto grid max-w-7xl gap-10">
             <Reveal className="relative overflow-hidden rounded-[2rem] bg-[#081120] px-5 pb-8 pt-8 text-white shadow-[0_30px_90px_rgba(8,17,32,0.18)] sm:px-8 sm:pb-10 sm:pt-10 lg:px-12">
               <div className="absolute inset-0">
                 <img
@@ -334,28 +334,6 @@ export default function App() {
                         <span className="text-cyan-300">{stat.value.slice(-1)}</span>
                       </div>
                       <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-400">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={140} className="self-stretch">
-              <div className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-[#dff2fb] p-7 shadow-[0_25px_70px_rgba(15,23,42,0.08)] sm:p-8">
-                <div>
-                  <div className="text-[0.72rem] font-bold uppercase tracking-[0.28em] text-cyan-800">Student route map</div>
-                  <div className="mt-3 text-3xl font-display font-black text-slate-950">Structured guidance from inquiry to takeoff.</div>
-                </div>
-                <div className="mt-8 grid flex-1 content-start gap-4">
-                  {steps.map((step) => (
-                    <div key={step.number} className="grid grid-cols-[auto_1fr] gap-4 rounded-[1.25rem] bg-white/80 p-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 font-display text-lg font-black text-white">
-                        {step.number}
-                      </div>
-                      <div>
-                        <div className="text-lg font-semibold text-slate-950">{step.title}</div>
-                        <p className="mt-1 text-sm leading-7 text-slate-600">{step.text}</p>
-                      </div>
                     </div>
                   ))}
                 </div>
